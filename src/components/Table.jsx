@@ -54,7 +54,10 @@ const Table = ({ adopt, setAdopt, isLoading }) => {
                     <tr>
                         <th className='p-3 text-sm font-semibold tracking-wide text-left'>Checkbox</th>
                         <th className='p-3 text-sm font-semibold tracking-wide text-left'>Available</th>
+                        <th className='p-3 text-sm font-semibold tracking-wide text-left'>Age</th>
+                        <th className='p-3 text-sm font-semibold tracking-wide text-left'>Origin</th>
                         <th className='p-3 text-sm font-semibold tracking-wide text-left'>Status</th>
+                        <th className='p-3 text-sm font-semibold tracking-wide text-left'>Adoptor</th>
                         <th className='p-3 text-sm font-semibold tracking-wide text-left'>Date created</th>
                         <th className='p-3 text-sm font-semibold tracking-wide text-left'>Actions</th>
                     </tr>
@@ -73,11 +76,14 @@ const Table = ({ adopt, setAdopt, isLoading }) => {
                                     </span>
                                 </td>
                                 <td className='p-3 text-sm'>{kidsList.body}</td>
+                                <td className='p-3 text-sm'>{kidsList.age}</td>
+                                <td className='p-3 text-sm'>{kidsList.country}</td>
                                 <td className='p-3 text-sm text-center'>
                                     <span className={`p-1.5 text-xs font-medium tracking-wider rounded-md ${kidsList.completed ? 'bg-green-300' : 'bg-red-300'}`}>
                                         {kidsList.completed ? 'Adopted' : 'Available'}
                                     </span>
                                 </td>
+                                <td className='p-3 text-sm'>{kidsList.adopted_by}</td>
                                 <td className='p-3 text-sm'>{new Date(kidsList.adopted_at).toLocaleString()}</td>
                                 <td className='p-3 text-sm font-medium grid grid-flow-col items-center mt-5'>
                                     <span className='text-xl cursor-pointer'>
@@ -90,9 +96,7 @@ const Table = ({ adopt, setAdopt, isLoading }) => {
                     )}
                 </tbody>
             </table>
-
-
-            
+  
             <input type="checkbox" id="my_modal_6" className="modal-toggle" />
             <div className="modal" role="dialog">
             <div className="modal-box">
@@ -104,9 +108,6 @@ const Table = ({ adopt, setAdopt, isLoading }) => {
                 </div>
             </div>
             </div> 
-
-
-
 
         </div>
     );

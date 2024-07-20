@@ -1,0 +1,16 @@
+.home-container {
+    background-image: url('../assets/kids.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  .home-container h1 {
+    font-size: 3rem;
+  }
+  
