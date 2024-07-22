@@ -6,8 +6,8 @@ function Footer() {
     <footer className="footerbox">
       <div className="footer-content">
         <div className="footer-text">
-          <p>© 2024 Jayce Turambe Website. All rights reserved.</p>
-          <p>Remember to connect with me! </p>
+          <p><small>© 2024 Jayce Turambe Website. All rights reserved.</small></p>
+          {/* <p>Remember to connect with me! </p> */}
         </div>
       </div>
 

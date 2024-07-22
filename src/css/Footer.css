@@ -26,6 +26,7 @@
 
   .footer-linkedin {
     text-align: left;
+    margin-bottom: -23px;
   }
   
   .footer-linkedin a, .footer-github a {
