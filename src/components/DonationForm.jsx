@@ -19,7 +19,7 @@ const DonationForm = ({fetchData}) => {
 
     const postDonation = async () => {
         try {
-            await axios.post(`http://127.0.0.1:8000/api/donate/`, newDonation)
+            await axios.post(`http://54.151.54.110:8000/api/donate/`, newDonation)
             fetchData()
             setNewDonation({
                 'name':'',

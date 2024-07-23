@@ -7,7 +7,7 @@ import DonationForm from './components/DonationForm';
 import DonationTable from './components/DonationTable';
 import Footer from './components/Footer';
 import Home from './components/Home';
-import Navbar from './components/NavBar';
+import Navbar from './components/Navbar';
 import Table from './components/Table';
 
 
@@ -23,11 +23,11 @@ function App() {
 
   const fetchData = async () => {
     try{
-      // const response = await axios.get("http://127.0.0.1:8000/api/adopt/")
+      // const response = await axios.get("http://54.151.54.110:8000/api/adopt/")
       
       const [adoptResponse, donateResponse] = await Promise.all([
-        axios.get("http://127.0.0.1:8000/api/adopt/"),
-        axios.get("http://127.0.0.1:8000/api/donate/")
+        axios.get("http://54.151.54.110:8000/api/adopt/"),
+        axios.get("http://54.151.54.110:8000/api/donate/")
       ]);
       setAdopt(adoptResponse.data)
       setGift(donateResponse.data)
