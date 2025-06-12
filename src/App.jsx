@@ -23,11 +23,11 @@ function App() {
 
   const fetchData = async () => {
     try{
-      // const response = await axios.get("http://54.151.54.110:8000/api/adopt/")
+      // const response = await axios.get("http://127.0.0.1:8000/api/adopt/")
       
       const [adoptResponse, donateResponse] = await Promise.all([
-        axios.get("http://54.151.54.110:8000/api/adopt/"),
-        axios.get("http://54.151.54.110:8000/api/donate/")
+        axios.get("http://127.0.0.1:8000/api1/adopt/"),
+        axios.get("http://127.0.0.1:8000/api2/donate/")
       ]);
       setAdopt(adoptResponse.data)
       setGift(donateResponse.data)

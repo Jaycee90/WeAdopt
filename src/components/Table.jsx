@@ -11,7 +11,7 @@ const Table = ({ adopt, setAdopt, isLoading }) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://54.151.54.110:8000/api/adopt/${id}/`);
+            await axios.delete(`http://127.0.0.1:8000/api1/adopt/${id}/`);
             const newList = adopt.filter(add => add.id !== id);
             setAdopt(newList);
         } catch (error) {
@@ -21,7 +21,7 @@ const Table = ({ adopt, setAdopt, isLoading }) => {
 
     const handleEdit = async (id, value) => {
         try {
-            const response = await axios.patch(`http://54.151.54.110:8000/api/adopt/${id}/`, value);
+            const response = await axios.patch(`http://127.0.0.1:8000/api1/adopt/${id}/`, value);
             const newList = adopt.map(add => add.id === id ? response.data : add);
             setAdopt(newList);
         } catch (error) {

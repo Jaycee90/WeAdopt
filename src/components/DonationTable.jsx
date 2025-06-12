@@ -10,7 +10,7 @@ export default function DonationTable({gift, setGift, isLoading}) {
 
     const handleEditing = async (id, value) => {
         try {
-            const response = await axios.patch(`http://54.151.54.110:8000/api/donate/${id}/`, value);
+            const response = await axios.patch(`http://127.0.0.1:8000/api2/donate/${id}/`, value);
             const newList = gift.map(add => add.id === id ? response.data : add);
             setGift(newList);
         } catch (error) {

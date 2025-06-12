@@ -17,7 +17,7 @@ const AdoptingForm = ({setAdopt, fetchData}) => {
 
     const postKid = async () => {
         try {
-            await axios.post('http://54.151.54.110:8000/api/adopt/', newKid)
+            await axios.post('http://127.0.0.1:8000/api1/adopt/', newKid)
             fetchData() //display a new kid directly  
             //alert('Added successfully!')
             setNewKid({ 'body': '' }) //clear content in button
