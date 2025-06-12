@@ -1,0 +1,25 @@
+services:
+  backend:
+    image: django-docker:0.0.1
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - PYTHONBUFFERED=1
+    restart: always
+
+  frontend:
+    image: weadopt-frontend:0.0.1
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
+    environment:
+      - NODE_ENV=development
+    restart: always
+
