@@ -1,0 +1,26 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+      {
+        "name": "frontend",
+        "image": "weadopt-frontend:0.0.1",
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 3000
+          }
+        ]
+      },
+      {
+        "name": "backend",
+        "image": "weadopt-backend:0.0.1",
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 8000
+          }
+        ]
+      }
+    ]
+  }
+  
