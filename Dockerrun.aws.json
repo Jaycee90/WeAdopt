@@ -1,0 +1,28 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+      {
+        "name": "frontend",
+        "image": "jayce90/weadopt-frontend:v1",
+        "hostname": "frontend",
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 3000
+          }
+        ]
+      },
+      {
+        "name": "backend",
+        "image": "jayce90/weadopt-backend:v1",
+        "hostname": "backend",
+        "essential": false,
+        "portMappings": [
+          {
+            "containerPort": 8000
+          }
+        ]
+      }
+    ]
+  }
+  

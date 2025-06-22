@@ -1,0 +1,27 @@
+name: Deploy to Elastic Beanstalk
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Generate deployment package
+        run: zip -r deploy.zip . -x "*.git*" "node_modules/*" "__pycache__/*"
+
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v20
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: weadopt
+          environment_name: weadopt-env
+          existing_bucket_name: elasticbeanstalk-us-east-1-656154104971 
+          region: us-east-1
+          version_label: ${{ github.sha }}
+          deployment_package: deploy.zip
