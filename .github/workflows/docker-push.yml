@@ -20,8 +20,15 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-        
+
+    - name: Build and push backend image
+      run: |
+        cd backend
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest .
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
+
     - name: Build and push frontend image
       run: |
-        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest ./frontend
+        cd frontend
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest .
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
