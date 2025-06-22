@@ -1,0 +1,41 @@
+/* src/components/Footer.css */
+.footerbox {
+    background-color: #73b6d8;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: -40;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-text {
+    align-items: center;
+  }
+  
+ .footer-github {
+    text-align: right;
+  }
+
+  .footer-linkedin {
+    text-align: left;
+    margin-bottom: -23px;
+  }
+  
+  .footer-linkedin a, .footer-github a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer-linkedin a:hover, .footer-github a:hover {
+    color: #ddd;
+  }
+  
