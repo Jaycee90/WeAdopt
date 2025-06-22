@@ -1,7 +1,9 @@
 services:
   backend:
-    image: django-docker:0.0.1
-    build: ./backend
+    image: jayce90/weadopt-backend:v1
+    build: 
+      dockerfile: Dockerfile
+      context: ./backend
     ports:
       - "8000:8000"
     volumes:
@@ -11,8 +13,9 @@ services:
     restart: always
 
   frontend:
-    image: weadopt-frontend:0.0.1
+    image: jayce90/weadopt-frontend:v1
     build:
+      dockerfile: Dockerfile
       context: ./frontend
     ports:
       - "3000:3000"
