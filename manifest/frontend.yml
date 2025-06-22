@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: jayce90/frontend:v3
+        image: jayce/frontend:latest 
         ports:
         - containerPort: 3000
         imagePullPolicy: Always
