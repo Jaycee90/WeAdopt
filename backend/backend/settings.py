@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7*!w=*3pk%lcez!5v1(n(ovscligw$_14$uf*egw68oi!&*fyg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '54.151.54.110', '0.0.0.0', '127.0.0.1', 'ec2-54-151-54-110.us-west-1.compute.amazonaws.com']
+ALLOWED_HOSTS = ['localhost', '"74.179.250.158"', '0.0.0.0', '127.0.0.1', 'ec2-54-151-54-110.us-west-1.compute.amazonaws.com']
 #changes...for commit check
 CORS_ALLOWED_ORIGINS = ['http://localhost:5173', 'http://weadopt.s3-website-us-west-1.amazonaws.com']
 
