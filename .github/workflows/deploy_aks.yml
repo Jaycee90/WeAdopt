@@ -25,6 +25,13 @@ jobs:
         resource-group: ${{ secrets.AKS_RESOURCE_GROUP }}
         cluster-name: ${{ secrets.AKS_CLUSTER_NAME }}
 
+    - name: Replace COMMIT_HASH in all Manifests
+      run: |
+        for file in manifest/*.yml; do
+        sed -i "s|\${COMMIT_HASH}|${{ github.sha }}|g" "$file"
+        done
+
+
     - name: Deploy to AKS
       run: |
         kubectl apply -f manifest
