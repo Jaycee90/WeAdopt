@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: jayce90/backend:latest
+        image: jayce90/backend:${COMMIT_HASH}
         ports:
         - containerPort: 8000
         imagePullPolicy: Always
