@@ -28,7 +28,7 @@ jobs:
     - name: Replace COMMIT_HASH in all Manifests
       run: |
         for file in manifest/*.yml; do
-        sed -i "s|\${COMMIT_HASH}|${{ github.sha }}|g" "$file"
+        sed -i "s/TAG_HOLDER/${{ github.ref_name }}/g" "$file"
         done
 
 
