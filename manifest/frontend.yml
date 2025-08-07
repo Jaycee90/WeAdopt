@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: jayce90/frontend:${COMMIT_HASH}
+        image: jayce90/frontend:TAG_HOLDER
         ports:
         - containerPort: 3000
         imagePullPolicy: Always
