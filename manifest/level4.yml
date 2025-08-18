@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: level4
+  labels: { app: level4 }
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: level4 }
+  template:
+    metadata:
+      labels: { app: level4 }
+    spec:
+      containers:
+      - name: app
+        image: YOUR_REGISTRY_PATH/level4:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MSG
+          valueFrom:
+            configMapKeyRef:
+              name: level4-config
+              key: message
+        readinessProbe:
+          httpGet:
+            path: /healthy
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /healthy
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
+          limits:
+            cpu: "200m"
+            memory: "128Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: level4-svc
+  labels: { app: level4 }
+spec:
+  type: ClusterIP
+  selector:
+    app: level4
+  ports:
+  - port: 8080
+    targetPort: 8080
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: level4-config
+data:
+  message: "Level 4: Hello"
